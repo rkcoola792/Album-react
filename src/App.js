@@ -1,10 +1,9 @@
-import Album from "./Componets/Home";
+import Home from "./Componets/Home";
 
 function App() {
   return (
     <div className="App">
-      
-      <Album></Album>
+      <Home></Home>
     </div>
   );
 }

@@ -1,8 +1,5 @@
 const data = [
-  // { id: "1" title: "Rajeev" },
-  // { id: "2" title: "Mayank" },
-  // { id: "3" title: "Deepshikha" },
-  // { id: "4" title: "Rohit" },
+
   {
     id: "1",
     title: "quidem molestiae enim",

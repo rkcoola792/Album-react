@@ -2,29 +2,24 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import data from "./data";
+import data from "../data";
 import { useNavigate, Link } from "react-router-dom";
 const Album = () => {
   const navigate = useNavigate();
 
-  const [data, setData] = useState([]);
-
+  const [dataLocal, setDataLocal] = useState([]);
+  const [localStorageData, setLocalStorageData] = useState();
   // fethcing the data from the API
   useEffect(() => {
     const url = `https://jsonplaceholder.typicode.com/albums`;
 
     fetch(url)
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setData(data);
+      .then((res) => {
+        console.log(res);
+        setDataLocal(res);
       });
   }, []);
-
-  localStorage.setItem("AlbumList", JSON.stringify(data));
-
-  const localData = localStorage.getItem("AlbumList");
-  console.log("Local data", JSON.parse(localData));
 
   // delete function
   const handleDelete = (id) => {
@@ -41,6 +36,7 @@ const Album = () => {
 
   return (
     <div>
+    <h1 style={{textAlign:"center"}}>Album list</h1>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>

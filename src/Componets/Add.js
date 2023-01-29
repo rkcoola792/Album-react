@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import data from "./data";
+import data from "../data";
 import { useNavigate, Link } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 
@@ -13,7 +13,7 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let ids = uuid();
-   
+
     let uniqueId = ids.slice(0, 3);
     let a = albumName;
 
@@ -26,6 +26,7 @@ const Create = () => {
       {/* using bootstrap form */}
       <Form className="d-grid gap-2" style={{ margin: "15rem" }}>
         <Form.Group className="mb-3" controlId="formName">
+        <h1 style={{ textAlign: "center" ,margin:"25px"}}>Add Album</h1>
           <Form.Control
             type="text"
             placeholder="Enter Album name"

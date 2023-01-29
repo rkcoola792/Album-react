@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import data from "./data";
+import data from "../data";
 import { useNavigate, Link } from "react-router-dom";
 
 const Edit = () => {
@@ -25,22 +25,25 @@ const Edit = () => {
   }, []);
 
   return (
-    <div>
-      <Form className="d-grid gap-2" style={{ margin: "15rem" }}>
-        <Form.Group className="mb-3" controlId="formName">
-          <Form.Control
-            type="text"
-            placeholder="Enter Album name"
-            required
-            onChange={(e) => setAlbumName(e.target.value)}
-            value={albumName}
-          ></Form.Control>
-        </Form.Group>
-        <Button onClick={(e) => handleSubmit(e)} type="submit">
-          Update
-        </Button>
-      </Form>
-    </div>
+    <>
+      <div>
+        <Form className="d-grid gap-2" style={{ margin: "15rem" }}>
+          <Form.Group className="mb-3" controlId="formName">
+            <h1 style={{ textAlign: "center" ,margin:"25px"}}>Edit Album</h1>
+            <Form.Control
+              type="text"
+              placeholder="Enter Album name"
+              required
+              onChange={(e) => setAlbumName(e.target.value)}
+              value={albumName}
+            ></Form.Control>
+          </Form.Group>
+          <Button onClick={(e) => handleSubmit(e)} type="submit">
+            Update
+          </Button>
+        </Form>
+      </div>
+    </>
   );
 };
 
